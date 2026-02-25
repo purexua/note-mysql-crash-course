@@ -40,51 +40,51 @@ ORDER BY order_date;
 
 ### 文本处理函数
 
-| 函数 | 说明 |
-|------|------|
-| `Left(str, n)` | 返回字符串左边的 n 个字符 |
-| `Length(str)` | 返回字符串的长度 |
-| `Locate(substr, str)` | 找出字符串中一个子串的位置 |
-| `Lower(str)` | 将字符串转换为小写 |
-| `LTrim(str)` | 去掉字符串左边的空格 |
-| `Right(str, n)` | 返回字符串右边的 n 个字符 |
-| `RTrim(str)` | 去掉字符串右边的空格 |
-| `Soundex(str)` | 返回字符串的 SOUNDEX 值 |
-| `SubString(str, pos, len)` | 返回子字符串 |
-| `Upper(str)` | 将字符串转换为大写 |
+| 函数 | 说明 | 示例 |
+|------|------|------|
+| `Left()` | 返回字符串左边的 n 个字符 | `Left(str, n)` |
+| `Length()` | 返回字符串的长度 | `Length(str)` |
+| `Locate()` | 找出子串在字符串中的位置 | `Locate(substr, str)` |
+| `Lower()` | 将字符串转换为小写 | `Lower(str)` |
+| `LTrim()` | 去掉字符串左边的空格 | `LTrim(str)` |
+| `Right()` | 返回字符串右边的 n 个字符 | `Right(str, n)` |
+| `RTrim()` | 去掉字符串右边的空格 | `RTrim(str)` |
+| `Soundex()` | 返回字符串的 SOUNDEX 值 | `Soundex(str)` |
+| `SubString()` | 返回子字符串 | `SubString(str, pos, len)` |
+| `Upper()` | 将字符串转换为大写 | `Upper(str)` |
 
 ### 日期和时间处理函数
 
-| 函数 | 说明 |
-|------|------|
-| `AddDate(date, INTERVAL n unit)` | 增加一个日期（天、周等） |
-| `AddTime(time, interval)` | 增加一个时间（时、分等） |
-| `CurDate()` | 返回当前日期 |
-| `CurTime()` | 返回当前时间 |
-| `Date(datetime)` | 返回日期时间的日期部分 |
-| `DateDiff(date1, date2)` | 计算两个日期之差 |
-| `Date_Add(date, INTERVAL n unit)` | 日期运算 |
-| `Date_Format(date, format)` | 返回一个格式化的日期或时间字符串 |
-| `Day(date)` | 返回一个日期的天数部分 |
-| `DayOfWeek(date)` | 返回对应的星期几 |
-| `Hour(time)` | 返回一个时间的小时部分 |
-| `Minute(time)` | 返回一个时间的分钟部分 |
-| `Month(date)` | 返回一个日期的月份部分 |
-| `Now()` | 返回当前日期和时间 |
-| `Second(time)` | 返回一个时间的秒部分 |
-| `Time(datetime)` | 返回一个日期时间的时间部分 |
-| `Year(date)` | 返回一个日期的年份部分 |
+| 函数 | 说明 | 示例 |
+|------|------|------|
+| `AddDate()` | 增加一个日期（天、周等） | `AddDate(date, INTERVAL n unit)` |
+| `AddTime()` | 增加一个时间（时、分等） | `AddTime(time, interval)` |
+| `CurDate()` | 返回当前日期 | `CurDate()` |
+| `CurTime()` | 返回当前时间 | `CurTime()` |
+| `Date()` | 返回日期时间的日期部分 | `Date(datetime)` |
+| `DateDiff()` | 计算两个日期之差 | `DateDiff(date1, date2)` |
+| `Date_Add()` | 日期运算 | `Date_Add(date, INTERVAL n unit)` |
+| `Date_Format()` | 返回格式化的日期或时间字符串 | `Date_Format(date, format)` |
+| `Day()` | 返回一个日期的天数部分 | `Day(date)` |
+| `DayOfWeek()` | 返回对应的星期几 | `DayOfWeek(date)` |
+| `Hour()` | 返回一个时间的小时部分 | `Hour(time)` |
+| `Minute()` | 返回一个时间的分钟部分 | `Minute(time)` |
+| `Month()` | 返回一个日期的月份部分 | `Month(date)` |
+| `Now()` | 返回当前日期和时间 | `Now()` |
+| `Second()` | 返回一个时间的秒部分 | `Second(time)` |
+| `Time()` | 返回日期时间的时间部分 | `Time(datetime)` |
+| `Year()` | 返回一个日期的年份部分 | `Year(date)` |
 
 ### 数值处理函数
 
-| 函数 | 说明 |
-|------|------|
-| `Abs(n)` | 返回一个数的绝对值 |
-| `Cos(n)` | 返回一个角度的余弦值 |
-| `Exp(n)` | 返回一个数的指数值 |
-| `Mod(n, m)` | 返回除法运算的余数 |
-| `Pi()` | 返回圆周率 |
-| `Rand()` | 返回一个随机数 |
-| `Sin(n)` | 返回一个角度的正弦值 |
-| `Sqrt(n)` | 返回一个数的平方根 |
-| `Tan(n)` | 返回一个角度的正切值 |
+| 函数 | 说明 | 示例 |
+|------|------|------|
+| `Abs()` | 返回一个数的绝对值 | `Abs(n)` |
+| `Cos()` | 返回一个角度的余弦值 | `Cos(n)` |
+| `Exp()` | 返回一个数的指数值 | `Exp(n)` |
+| `Mod()` | 返回除法运算的余数 | `Mod(n, m)` |
+| `Pi()` | 返回圆周率 | `Pi()` |
+| `Rand()` | 返回一个随机数 | `Rand()` |
+| `Sin()` | 返回一个角度的正弦值 | `Sin(n)` |
+| `Sqrt()` | 返回一个数的平方根 | `Sqrt(n)` |
+| `Tan()` | 返回一个角度的正切值 | `Tan(n)` |
