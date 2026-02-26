@@ -1,4 +1,4 @@
-# MySQL Crash Course 练习题解答
+# MySQL Crash Course Notes
 
 《MySQL必知必会》（第2版）练习题解答与学习笔记，基于 `crashcourse` 示例数据库。
 
