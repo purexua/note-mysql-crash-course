@@ -24,19 +24,19 @@ VALUES ('Xu Bai', '123 Main St', 'Shenzhen', 'GD', '518000', 'CN');
 **答案：**
 
 ```sql
-CREATE TABLE orders_backup AS SELECT * FROM orders;
+CREATE TABLE orders_backup LIKE orders;
 
 INSERT INTO orders_backup
 SELECT * FROM orders;
 ```
 
 ```sql
-CREATE TABLE orderitems_backup AS SELECT * FROM orderitems;
+CREATE TABLE orderitems_backup LIKE orderitems;
 
 INSERT INTO orderitems_backup
 SELECT * FROM orderitems;
 ```
 
-**说明：** 先用 `CREATE TABLE ... AS SELECT` 创建与原表结构相同的备份表，再用 `INSERT INTO ... SELECT` 将所有数据复制进去。也可以直接用 `CREATE TABLE ... AS SELECT` 一步完成建表和数据复制。
+**说明：** 先用 `CREATE TABLE ... LIKE` 复制表结构，再用 `INSERT INTO ... SELECT` 复制数据，避免重复插入。若使用 `CREATE TABLE ... AS SELECT`，通常可一步完成建表和数据复制。
 
 ---

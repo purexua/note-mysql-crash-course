@@ -9,12 +9,16 @@
 **答案：**
 
 ```sql
-CREATE PROCEDURE customerorders(IN cust_id INT)
+DELIMITER //
+
+CREATE PROCEDURE customerorders(IN p_cust_id INT)
 BEGIN
     SELECT order_num
     FROM orders
-    WHERE orders.cust_id = cust_id
-END;
+    WHERE orders.cust_id = p_cust_id;
+END//
+
+DELIMITER ;
 ```
 
 **调用：**
@@ -23,7 +27,7 @@ END;
 CALL customerorders(10001);
 ```
 
-**说明：** 存储过程接受 IN 参数 `cust_id`，在过程体内用 WHERE 过滤该顾客的所有订单并返回。注意用表名限定 `orders.cust_id` 以避免与参数名冲突。
+**说明：** 创建存储过程时需要先调整 `DELIMITER`，避免 `BEGIN ... END` 内部的分号提前结束语句；参数命名为 `p_cust_id` 可避免与列名混淆。
 
 ---
 
