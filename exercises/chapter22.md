@@ -33,7 +33,7 @@ SELECT * FROM vendorproducts;
 
 ```sql
 CREATE VIEW customerswithorders AS
-SELECT customers.*
+SELECT DISTINCT customers.*
 FROM customers
 INNER JOIN orders ON customers.cust_id = orders.cust_id;
 ```
@@ -44,6 +44,6 @@ INNER JOIN orders ON customers.cust_id = orders.cust_id;
 SELECT * FROM customerswithorders;
 ```
 
-**说明：** INNER JOIN 只保留在 orders 表中有匹配记录的顾客，即只返回已下过订单的顾客。视图将这一过滤逻辑封装起来，使用时无需关心底层实现。
+**说明：** INNER JOIN 只保留在 orders 表中有匹配记录的顾客，即只返回已下过订单的顾客。加上 `DISTINCT` 可避免同一顾客有多笔订单时在视图中重复出现。
 
 ---

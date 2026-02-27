@@ -9,7 +9,7 @@
 **答案：**
 
 ```sql
-SELECT cust_id
+SELECT DISTINCT cust_id
 FROM orders
 WHERE order_num IN (
     SELECT order_num
@@ -50,7 +50,7 @@ ORDER BY order_date;
 **答案：**
 
 ```sql
-SELECT cust_email
+SELECT DISTINCT cust_email
 FROM customers
 WHERE cust_id IN (
     SELECT cust_id

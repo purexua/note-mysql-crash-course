@@ -60,14 +60,14 @@ ORDER BY prod_name;
 **答案：**
 
 ```sql
-SELECT products.prod_name, COUNT(orderitems.order_num) AS orders
+SELECT products.prod_name, COUNT(DISTINCT orderitems.order_num) AS orders
 FROM products
 LEFT OUTER JOIN orderitems ON products.prod_id = orderitems.prod_id
 GROUP BY products.prod_name
 ORDER BY prod_name;
 ```
 
-**说明：** 在 16.3 的基础上用 `COUNT()` 替换 order_num，并加上 `GROUP BY`。`COUNT(orderitems.order_num)` 对 NULL 不计数，因此未被订购的产品计数为 0。
+**说明：** 在 16.3 的基础上用 `COUNT()` 替换 order_num，并加上 `GROUP BY`。使用 `COUNT(DISTINCT orderitems.order_num)` 可确保统计的是“订单数”而非“明细行数”；未被订购的产品计数为 0。
 
 ---
 

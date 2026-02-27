@@ -84,7 +84,7 @@ HAVING COUNT(*) >= 3
 ORDER BY items, order_num;
 ```
 
-**答案：** `GROUP BY items` 有误。`items` 是 `SELECT` 中定义的别名，`GROUP BY` 子句在 `SELECT` 之前执行，此时别名尚未生效，因此无法按别名分组。应改为按实际列名分组：
+**答案：** `GROUP BY items` 有误。这里的 `items` 是聚合表达式 `COUNT(*)` 的别名，等价于尝试按聚合结果分组（类似 `GROUP BY COUNT(*)`），这在语义上不成立。应改为按实际分组列 `order_num` 分组：
 
 ```sql
 SELECT order_num, COUNT(*) AS items
@@ -94,6 +94,6 @@ HAVING COUNT(*) >= 3
 ORDER BY items, order_num;
 ```
 
-**说明：** SQL 子句执行顺序为 `FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY`，`GROUP BY` 不能引用 `SELECT` 中定义的别名，`ORDER BY` 则可以。
+**说明：** 本题要统计“每个订单有多少行”，因此分组键必须是 `order_num`，聚合列应放在 `SELECT/HAVING` 中而不是 `GROUP BY` 中。
 
 ---
