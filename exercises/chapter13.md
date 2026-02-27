@@ -46,7 +46,7 @@ ORDER BY cheapest_item;
 SELECT order_num
 FROM orderitems
 GROUP BY order_num
-HAVING SUM(quantity) >= 100;
+HAVING SUM(quantity) >= 100
 ORDER BY order_num;
 ```
 
@@ -90,7 +90,7 @@ ORDER BY items, order_num;
 SELECT order_num, COUNT(*) AS items
 FROM orderitems
 GROUP BY order_num
-HAVING COUNT() >= 3
+HAVING COUNT(*) >= 3
 ORDER BY items, order_num;
 ```
 

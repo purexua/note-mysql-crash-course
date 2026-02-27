@@ -27,7 +27,7 @@ WHERE prod_name REGEXP '[0-9]$';
 ```sql
 SELECT prod_name
 FROM products
-WHERE NOT prod_name REGEXP "[[:digit:]]"
+WHERE NOT prod_name REGEXP "[[:digit:]]";
 ```
 
 **说明：** 用 `NOT` 对整个正则匹配取反，排除所有名称中含有数字的行，只保留纯文字名称的产品。
